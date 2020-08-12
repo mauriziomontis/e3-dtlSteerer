@@ -1,0 +1,116 @@
+##############################################################################
+############ Startup File for DTL Steerer System 
+############ 
+############ Author: Maurizio Montis || INFN-LNL
+############         Mauro.Giacchini || INFN-LNL
+############ Mail:   maurizio.montis@lnl.infn.it
+############         mauro.giacchini@lnl.infn.it
+############
+##############################################################################
+
+
+##############################################################################
+############ Environment 
+
+###
+############ Configuration
+############ Set the values in order to proper configure the application
+############
+###
+
+epicsEnvSet("ENGINNER", "mauro giacchini")
+epicsEnvSet("LOCATION", "INFN-LNL")
+epicsEnvSet("IOCNAME" , "dtl-biltPS")
+
+epicsEnvSet("EPICS_CA_AUTO_ADDR_LIST" , "NO")
+epicsEnvSet("EPICS_CA_ADDR_LIST" , "10.10.0.14")
+
+epicsEnvSet("TOP","${E3_SITEMODS_PATH}/biltPS")
+epicsEnvSet("STREAM_PROTOCOL_PATH", "${biltPS_DB}")
+
+epicsEnvSet("CRATE1", "CRATE1")
+epicsEnvSet("CRATE2", "CRATE2")
+epicsEnvSet("CRATE3", "CRATE3")
+epicsEnvSet("CRATE4", "CRATE4")
+epicsEnvSet("CRATE5", "CRATE5")
+epicsEnvSet("IPADDR4", "10.10.0.21")
+epicsEnvSet("IPADDR5", "10.10.0.22")
+epicsEnvSet("IPADDR1", "10.10.0.23")
+epicsEnvSet("IPADDR2", "10.10.0.24")
+epicsEnvSet("IPADDR3", "10.10.0.25")
+epicsEnvSet("PORT", "5025")
+
+
+##############################################################################
+############ Modules Required
+
+require stream,2.8.10
+require biltITest,master
+
+
+
+##############################################################################
+############ Configure Communication Driver
+
+drvAsynIPPortConfigure(${CRATE1}-asyn-port,${IPADDR1}:${PORT},0,0,0)
+drvAsynIPPortConfigure(${CRATE2}-asyn-port,${IPADDR2}:${PORT},0,0,0)
+drvAsynIPPortConfigure(${CRATE3}-asyn-port,${IPADDR3}:${PORT},0,0,0)
+drvAsynIPPortConfigure(${CRATE4}-asyn-port,${IPADDR4}:${PORT},0,0,0)
+drvAsynIPPortConfigure(${CRATE5}-asyn-port,${IPADDR5}:${PORT},0,0,0)
+
+
+
+##############################################################################
+############ Load Databases
+
+# CRATE #1
+dbLoadRecords("$(TOP)/master/db/biltMod.db", "DEVICENAME = BMD-CV-001, ASYNPORT = $(CRATE1)-asyn-port, MODULE = 1 , MAXCURRENT = 2, MAXVOLTAGE = 2, AREASTRUCTURE = DTL-010, DEVICE= TANK1-DT#5-VERTICAL")
+dbLoadRecords("$(TOP)/master/db/biltMod.db", "DEVICENAME = BMD-CH-001, ASYNPORT = $(CRATE1)-asyn-port, MODULE = 3 , MAXCURRENT = 2, MAXVOLTAGE = 2, AREASTRUCTURE = DTL-010, DEVICE= TANK1-DT#7-HORIZONTAL")
+dbLoadRecords("$(TOP)/master/db/biltMod.db", "DEVICENAME = BMD-CV-002, ASYNPORT = $(CRATE1)-asyn-port, MODULE = 5 , MAXCURRENT = 2, MAXVOLTAGE = 2, AREASTRUCTURE = DTL-010, DEVICE= TANK1-DT#9-VERTICAL")
+dbLoadRecords("$(TOP)/master/db/biltMod.db", "DEVICENAME = BMD-CH-002, ASYNPORT = $(CRATE1)-asyn-port, MODULE = 7 , MAXCURRENT = 2, MAXVOLTAGE = 2, AREASTRUCTURE = DTL-010, DEVICE= TANK1-DT#11-HORIZONTAL")
+dbLoadRecords("$(TOP)/master/db/biltMod.db", "DEVICENAME = BMD-CV-003, ASYNPORT = $(CRATE1)-asyn-port, MODULE = 9 , MAXCURRENT = 2, MAXVOLTAGE = 2, AREASTRUCTURE = DTL-010, DEVICE= TANK1-DT#21-VERTICAL")
+dbLoadRecords("$(TOP)/master/db/biltMod.db", "DEVICENAME = BMD-CH-003, ASYNPORT = $(CRATE1)-asyn-port, MODULE = 11 , MAXCURRENT = 2, MAXVOLTAGE = 2, AREASTRUCTURE = DTL-010, DEVICE= TANK1-DT#23-HORIZONTAL")
+
+# CRATE #2
+dbLoadRecords("$(TOP)/master/db/biltMod.db", "DEVICENAME = BMD-CV-004, ASYNPORT = $(CRATE2)-asyn-port, MODULE = 1 , MAXCURRENT = 2, MAXVOLTAGE = 2, AREASTRUCTURE = DTL-010, DEVICE= TANK1-DT#27-VERTICAL")
+dbLoadRecords("$(TOP)/master/db/biltMod.db", "DEVICENAME = BMD-CH-004, ASYNPORT = $(CRATE2)-asyn-port, MODULE = 3 , MAXCURRENT = 2, MAXVOLTAGE = 2, AREASTRUCTURE = DTL-010, DEVICE= TANK1-DT#29-HORIZONTAL")
+dbLoadRecords("$(TOP)/master/db/biltMod.db", "DEVICENAME = BMD-CV-005, ASYNPORT = $(CRATE2)-asyn-port, MODULE = 5 , MAXCURRENT = 2, MAXVOLTAGE = 2, AREASTRUCTURE = DTL-010, DEVICE= TANK1-DT#43-VERTICAL")
+dbLoadRecords("$(TOP)/master/db/biltMod.db", "DEVICENAME = BMD-CH-005, ASYNPORT = $(CRATE2)-asyn-port, MODULE = 7 , MAXCURRENT = 2, MAXVOLTAGE = 2, AREASTRUCTURE = DTL-010, DEVICE= TANK1-DT#45-HORIZONTAL")
+dbLoadRecords("$(TOP)/master/db/biltMod.db", "DEVICENAME = BMD-CV-006, ASYNPORT = $(CRATE2)-asyn-port, MODULE = 9 , MAXCURRENT = 2, MAXVOLTAGE = 2, AREASTRUCTURE = DTL-010, DEVICE= TANK1-DT#49-VERTICAL")
+dbLoadRecords("$(TOP)/master/db/biltMod.db", "DEVICENAME = BMD-CH-006, ASYNPORT = $(CRATE2)-asyn-port, MODULE = 11 , MAXCURRENT = 2, MAXVOLTAGE = 2, AREASTRUCTURE = DTL-010, DEVICE= TANK1-DT#51-HORIZONTAL")
+
+# CRATE #3
+dbLoadRecords("$(TOP)/master/db/biltMod.db", "DEVICENAME = BMD-CV-001, ASYNPORT = $(CRATE3)-asyn-port, MODULE = 1 , MAXCURRENT = 2, MAXVOLTAGE = 2, AREASTRUCTURE = DTL-020, DEVICE= TANK2-DT#5-VERTICAL")
+dbLoadRecords("$(TOP)/master/db/biltMod.db", "DEVICENAME = BMD-CH-001, ASYNPORT = $(CRATE3)-asyn-port, MODULE = 3 , MAXCURRENT = 2, MAXVOLTAGE = 2, AREASTRUCTURE = DTL-020, DEVICE= TANK2-DT#7-HORIZONTAL")
+dbLoadRecords("$(TOP)/master/db/biltMod.db", "DEVICENAME = BMD-CV-002, ASYNPORT = $(CRATE3)-asyn-port, MODULE = 5 , MAXCURRENT = 2, MAXVOLTAGE = 2, AREASTRUCTURE = DTL-020, DEVICE= TANK2-DT#17-VERTICAL")
+dbLoadRecords("$(TOP)/master/db/biltMod.db", "DEVICENAME = BMD-CH-002, ASYNPORT = $(CRATE3)-asyn-port, MODULE = 7 , MAXCURRENT = 2, MAXVOLTAGE = 2, AREASTRUCTURE = DTL-020, DEVICE= TANK2-DT#19-HORIZONTAL")
+dbLoadRecords("$(TOP)/master/db/biltMod.db", "DEVICENAME = BMD-CV-003, ASYNPORT = $(CRATE3)-asyn-port, MODULE = 9 , MAXCURRENT = 2, MAXVOLTAGE = 2, AREASTRUCTURE = DTL-020, DEVICE= TANK2-DT#29-VERTICAL")
+dbLoadRecords("$(TOP)/master/db/biltMod.db", "DEVICENAME = BMD-CH-003, ASYNPORT = $(CRATE3)-asyn-port, MODULE = 11 , MAXCURRENT = 2, MAXVOLTAGE = 2, AREASTRUCTURE = DTL-020, DEVICE= TANK2-DT#31-HORIZONTAL")
+
+#CRATE #4
+dbLoadRecords("$(TOP)/master/db/biltMod.db", "DEVICENAME = BMD-CV-001, ASYNPORT = $(CRATE4)-asyn-port, MODULE = 1 , MAXCURRENT = 2, MAXVOLTAGE = 2, AREASTRUCTURE = DTL-030, DEVICE= TANK3-DT#6-VERTICAL")
+dbLoadRecords("$(TOP)/master/db/biltMod.db", "DEVICENAME = BMD-CH-001, ASYNPORT = $(CRATE4)-asyn-port, MODULE = 3 , MAXCURRENT = 2, MAXVOLTAGE = 2, AREASTRUCTURE = DTL-030, DEVICE= TANK3-DT#8-HORIZONTAL")
+dbLoadRecords("$(TOP)/master/db/biltMod.db", "DEVICENAME = BMD-CV-002, ASYNPORT = $(CRATE4)-asyn-port, MODULE = 5 , MAXCURRENT = 2, MAXVOLTAGE = 2, AREASTRUCTURE = DTL-030, DEVICE= TANK3-DT#20-VERTICAL")
+dbLoadRecords("$(TOP)/master/db/biltMod.db", "DEVICENAME = BMD-CH-002, ASYNPORT = $(CRATE4)-asyn-port, MODULE = 7 , MAXCURRENT = 2, MAXVOLTAGE = 2, AREASTRUCTURE = DTL-030, DEVICE= TANK3-DT#22-HORIZONTAL")
+dbLoadRecords("$(TOP)/master/db/biltMod.db", "DEVICENAME = BMD-CV-001, ASYNPORT = $(CRATE4)-asyn-port, MODULE = 9 , MAXCURRENT = 2, MAXVOLTAGE = 2, AREASTRUCTURE = DTL-040, DEVICE= TANK4-DT#4-VERTICAL")
+dbLoadRecords("$(TOP)/master/db/biltMod.db", "DEVICENAME = BMD-CH-001, ASYNPORT = $(CRATE4)-asyn-port, MODULE = 11 , MAXCURRENT = 2, MAXVOLTAGE = 2, AREASTRUCTURE = DTL-040, DEVICE= TANK4-DT#6-HORIZONTAL")
+
+#CRATE #5
+dbLoadRecords("$(TOP)/master/db/biltMod.db", "DEVICENAME = BMD-CV-002, ASYNPORT = $(CRATE5)-asyn-port, MODULE = 1 , MAXCURRENT = 2, MAXVOLTAGE = 2, AREASTRUCTURE = DTL-040, DEVICE= TANK4-DT#16-VERTICAL")
+dbLoadRecords("$(TOP)/master/db/biltMod.db", "DEVICENAME = BMD-CH-002, ASYNPORT = $(CRATE5)-asyn-port, MODULE = 3 , MAXCURRENT = 2, MAXVOLTAGE = 2, AREASTRUCTURE = DTL-040, DEVICE= TANK4-DT#18-HORIZONTAL")
+dbLoadRecords("$(TOP)/master/db/biltMod.db", "DEVICENAME = BMD-CV-001, ASYNPORT = $(CRATE5)-asyn-port, MODULE = 5 , MAXCURRENT = 2, MAXVOLTAGE = 2, AREASTRUCTURE = DTL-050, DEVICE= TANK5-DT#3-VERTICAL")
+dbLoadRecords("$(TOP)/master/db/biltMod.db", "DEVICENAME = BMD-CH-001, ASYNPORT = $(CRATE5)-asyn-port, MODULE = 7 , MAXCURRENT = 2, MAXVOLTAGE = 2, AREASTRUCTURE = DTL-050, DEVICE= TANK5-DT#5-HORIZONTAL")
+dbLoadRecords("$(TOP)/master/db/biltMod.db", "DEVICENAME = BMD-CV-002, ASYNPORT = $(CRATE5)-asyn-port, MODULE = 9 , MAXCURRENT = 2, MAXVOLTAGE = 2, AREASTRUCTURE = DTL-050, DEVICE= TANK5-DT#15-VERTICAL")
+dbLoadRecords("$(TOP)/master/db/biltMod.db", "DEVICENAME = BMD-CH-002, ASYNPORT = $(CRATE5)-asyn-port, MODULE = 11 , MAXCURRENT = 2, MAXVOLTAGE = 2, AREASTRUCTURE = DTL-050, DEVICE= TANK5-DT#17-HORIZONTAL")
+
+#dbLoadRecords("iocAdminSoft.db","IOC=$(IOCNAME):IocStat")
+
+
+
+
+##############################################################################
+############ Start Application
+
+iocInit()
+
+#dbl > "$(TOP)/$(DEVICENAME)_PVs.list"
