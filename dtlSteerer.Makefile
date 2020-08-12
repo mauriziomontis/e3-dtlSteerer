@@ -39,9 +39,9 @@ include $(E3_REQUIRE_CONFIG)/DECOUPLE_FLAGS
 #asyn_VERSION=$(ASYN_DEP_VERSION)
 #endif
 
-#ifneq ($(strip $(SEQUENCER_DEP_VERSION)),)
-#sequencer_VERSION=$(SEQUENCER_DEP_VERSION)
-#endif
+ifneq ($(strip $(SEQUENCER_DEP_VERSION)),)
+sequencer_VERSION=$(SEQUENCER_DEP_VERSION)
+endif
 
 
 
@@ -49,9 +49,9 @@ include $(E3_REQUIRE_CONFIG)/DECOUPLE_FLAGS
 ##EXCLUDE_ARCHS += linux-ppc64e6500
 ##EXCLUDE_ARCHS += linux-corei7-poky
 
-# APP:=calcApp
-# APPDB:=$(APP)/Db
-# APPSRC:=$(APP)/src
+ APP:=dtlSteererApp
+ APPDB:=$(APP)/Db
+ APPSRC:=$(APP)/src
 
 
 # USR_INCLUDES += -I$(where_am_I)$(APPSRC)
@@ -63,10 +63,11 @@ include $(E3_REQUIRE_CONFIG)/DECOUPLE_FLAGS
 # USR_CPPFLAGS += -Wno-unused-function
 # USR_CPPFLAGS += -Wno-unused-but-set-variable
 
+ TEMPLATES += $(wildcard $(APPDB)/*.db)
 # TEMPLATES += $(wildcard $(APPDB)/*.db)
-# TEMPLATES += $(wildcard $(APPDB)/*.db)
-# TEMPLATES += $(wildcard $(APPDB)/*.proto)
-# TEMPLATES += $(wildcard $(APPDB)/*.template)
+ TEMPLATES += $(wildcard $(APPDB)/*.proto)
+ TEMPLATES += $(wildcard $(APPDB)/*.template)
+ TEMPLATES += $(wildcard $(APPDB)/*.substitutions)
 
 
 # DBDINC_SRCS += $(APPSRC)/swaitRecord.c
@@ -185,7 +186,8 @@ include $(E3_REQUIRE_CONFIG)/DECOUPLE_FLAGS
 # VENDOR_LIBS += $(SUPPORT)/os/linux-x86_64/libflycapture.so
 
 
-
+DTLSTEERER_SUBDIRS = scripts
+SCRIPTS += $(foreach path, $(DTLSTEERER_SUBDIRS), $(wildcard $(APP)/$(path)/*.cmd) $(wildcard $(APP)/$(path)/*/*.cmd))
 SCRIPTS += $(wildcard ../iocsh/*.iocsh)
 
 
