@@ -1,0 +1,16 @@
+# Steerer Resistence for Steerer System
+# record required to evaluate DTL steerer internal resistence
+#
+# developed by Maurizio Montis | INFN-LNL
+
+
+record(calc, "$(AREASTRUCTURE):$(DEVICENAME):Imp") {
+	field(DESC, "$(DEVICE) Internal Impedance")
+	field(PINI, "YES")
+	field(VAL, 0)
+	field(INPA, "$(AREASTRUCTURE):$(DEVICENAME):Vol")
+	field(INPB, "$(AREASTRUCTURE):$(DEVICENAME):Cur")
+	field(CALC, "A/B")
+	field(SCAN, "1 second")
+	field(EGU, "Ohm")
+}

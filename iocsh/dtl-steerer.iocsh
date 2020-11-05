@@ -1,6 +1,6 @@
 ##############################################################################
-############ Startup File for DTL Steerer System 
-############ 
+############ Startup File for DTL Steerer System
+############
 ############ Author: Maurizio Montis || INFN-LNL
 ############         Mauro.Giacchini || INFN-LNL
 ############ Mail:   maurizio.montis@lnl.infn.it
@@ -10,7 +10,7 @@
 
 
 ##############################################################################
-############ Environment 
+############ Environment
 
 ###
 ############ Configuration
@@ -116,10 +116,46 @@ dbLoadRecords("$(DTL_BILTITEST_DB)biltMod.db", "DEVICENAME = BMD-CH-001, ASYNPOR
 dbLoadRecords("$(DTL_BILTITEST_DB)biltMod.db", "DEVICENAME = BMD-CV-002, ASYNPORT = $(CRATE5)-asyn-port, MODULE = 9 , MAXCURRENT = 10, MAXVOLTAGE = 2, AREASTRUCTURE = DTL-050, DEVICE= TANK5-DT#15-VERTICAL")
 dbLoadRecords("$(DTL_BILTITEST_DB)biltMod.db", "DEVICENAME = BMD-CH-002, ASYNPORT = $(CRATE5)-asyn-port, MODULE = 11 , MAXCURRENT = 10, MAXVOLTAGE = 2, AREASTRUCTURE = DTL-050, DEVICE= TANK5-DT#17-HORIZONTAL")
 
+
+# Internal Impedences
+dbLoadRecords("$(DTL_STEERER_DB)steererImpedance.db", "DEVICENAME = BMD-CV-001, AREASTRUCTURE = DTL-010, DEVICE= TANK1-DT#5-VERTICAL")
+dbLoadRecords("$(DTL_STEERER_DB)steererImpedance.db", "DEVICENAME = BMD-CH-001, AREASTRUCTURE = DTL-010, DEVICE= TANK1-DT#7-HORIZONTAL")
+dbLoadRecords("$(DTL_STEERER_DB)steererImpedance.db", "DEVICENAME = BMD-CV-002, AREASTRUCTURE = DTL-010, DEVICE= TANK1-DT#9-VERTICAL")
+dbLoadRecords("$(DTL_STEERER_DB)steererImpedance.db", "DEVICENAME = BMD-CH-002, AREASTRUCTURE = DTL-010, DEVICE= TANK1-DT#11-HORIZONTAL")
+dbLoadRecords("$(DTL_STEERER_DB)steererImpedance.db", "DEVICENAME = BMD-CV-003, AREASTRUCTURE = DTL-010, DEVICE= TANK1-DT#21-VERTICAL")
+dbLoadRecords("$(DTL_STEERER_DB)steererImpedance.db", "DEVICENAME = BMD-CH-003, AREASTRUCTURE = DTL-010, DEVICE= TANK1-DT#23-HORIZONTAL")
+
+dbLoadRecords("$(DTL_STEERER_DB)steererImpedance.db", "DEVICENAME = BMD-CV-004, AREASTRUCTURE = DTL-010, DEVICE= TANK1-DT#27-VERTICAL")
+dbLoadRecords("$(DTL_STEERER_DB)steererImpedance.db", "DEVICENAME = BMD-CH-004, AREASTRUCTURE = DTL-010, DEVICE= TANK1-DT#29-HORIZONTAL")
+dbLoadRecords("$(DTL_STEERER_DB)steererImpedance.db", "DEVICENAME = BMD-CV-005, AREASTRUCTURE = DTL-010, DEVICE= TANK1-DT#43-VERTICAL")
+dbLoadRecords("$(DTL_STEERER_DB)steererImpedance.db", "DEVICENAME = BMD-CH-005, AREASTRUCTURE = DTL-010, DEVICE= TANK1-DT#45-HORIZONTAL")
+dbLoadRecords("$(DTL_STEERER_DB)steererImpedance.db", "DEVICENAME = BMD-CV-006, AREASTRUCTURE = DTL-010, DEVICE= TANK1-DT#49-VERTICAL")
+dbLoadRecords("$(DTL_STEERER_DB)steererImpedance.db", "DEVICENAME = BMD-CH-006, AREASTRUCTURE = DTL-010, DEVICE= TANK1-DT#51-HORIZONTAL")
+
+dbLoadRecords("$(DTL_STEERER_DB)steererImpedance.db", "DEVICENAME = BMD-CV-001, AREASTRUCTURE = DTL-020, DEVICE= TANK2-DT#5-VERTICAL")
+dbLoadRecords("$(DTL_STEERER_DB)steererImpedance.db", "DEVICENAME = BMD-CH-001, AREASTRUCTURE = DTL-020, DEVICE= TANK2-DT#7-HORIZONTAL")
+dbLoadRecords("$(DTL_STEERER_DB)steererImpedance.db", "DEVICENAME = BMD-CV-002, AREASTRUCTURE = DTL-020, DEVICE= TANK2-DT#17-VERTICAL")
+dbLoadRecords("$(DTL_STEERER_DB)steererImpedance.db", "DEVICENAME = BMD-CH-002, AREASTRUCTURE = DTL-020, DEVICE= TANK2-DT#19-HORIZONTAL")
+dbLoadRecords("$(DTL_STEERER_DB)steererImpedance.db", "DEVICENAME = BMD-CV-003, AREASTRUCTURE = DTL-020, DEVICE= TANK2-DT#29-VERTICAL")
+dbLoadRecords("$(DTL_STEERER_DB)steererImpedance.db", "DEVICENAME = BMD-CH-003, AREASTRUCTURE = DTL-020, DEVICE= TANK2-DT#31-HORIZONTAL")
+
+dbLoadRecords("$(DTL_STEERER_DB)steererImpedance.db", "DEVICENAME = BMD-CV-001, AREASTRUCTURE = DTL-030, DEVICE= TANK3-DT#6-VERTICAL")
+dbLoadRecords("$(DTL_STEERER_DB)steererImpedance.db", "DEVICENAME = BMD-CH-001, AREASTRUCTURE = DTL-030, DEVICE= TANK3-DT#8-HORIZONTAL")
+dbLoadRecords("$(DTL_STEERER_DB)steererImpedance.db", "DEVICENAME = BMD-CV-002, AREASTRUCTURE = DTL-030, DEVICE= TANK3-DT#20-VERTICAL")
+dbLoadRecords("$(DTL_STEERER_DB)steererImpedance.db", "DEVICENAME = BMD-CH-002, AREASTRUCTURE = DTL-030, DEVICE= TANK3-DT#22-HORIZONTAL")
+dbLoadRecords("$(DTL_STEERER_DB)steererImpedance.db", "DEVICENAME = BMD-CV-001, AREASTRUCTURE = DTL-040, DEVICE= TANK4-DT#4-VERTICAL")
+dbLoadRecords("$(DTL_STEERER_DB)steererImpedance.db", "DEVICENAME = BMD-CH-001, AREASTRUCTURE = DTL-040, DEVICE= TANK4-DT#6-HORIZONTAL")
+
+dbLoadRecords("$(DTL_STEERER_DB)steererImpedance.db", "DEVICENAME = BMD-CV-002, AREASTRUCTURE = DTL-040, DEVICE= TANK4-DT#16-VERTICAL")
+dbLoadRecords("$(DTL_STEERER_DB)steererImpedance.db", "DEVICENAME = BMD-CH-002, AREASTRUCTURE = DTL-040, DEVICE= TANK4-DT#18-HORIZONTAL")
+dbLoadRecords("$(DTL_STEERER_DB)steererImpedance.db", "DEVICENAME = BMD-CV-001, AREASTRUCTURE = DTL-050, DEVICE= TANK5-DT#3-VERTICAL")
+dbLoadRecords("$(DTL_STEERER_DB)steererImpedance.db", "DEVICENAME = BMD-CH-001, AREASTRUCTURE = DTL-050, DEVICE= TANK5-DT#5-HORIZONTAL")
+dbLoadRecords("$(DTL_STEERER_DB)steererImpedance.db", "DEVICENAME = BMD-CV-002, AREASTRUCTURE = DTL-050, DEVICE= TANK5-DT#15-VERTICAL")
+dbLoadRecords("$(DTL_STEERER_DB)steererImpedance.db", "DEVICENAME = BMD-CH-002, AREASTRUCTURE = DTL-050, DEVICE= TANK5-DT#17-HORIZONTAL")
+
+
 # Man|Auto Control
 dbLoadRecords("${DTL_STEERER_DB}autoControl.db")
-
-
 
 
 
