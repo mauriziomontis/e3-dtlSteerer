@@ -11,6 +11,18 @@ record(calc, "$(AREASTRUCTURE):$(DEVICENAME):Imp") {
 	field(INPA, "$(AREASTRUCTURE):$(DEVICENAME):Vol")
 	field(INPB, "$(AREASTRUCTURE):$(DEVICENAME):Cur")
 	field(CALC, "A/B")
+	#field(SCAN, "1 second")
+	field(EGU, "Ohm")
+}
+
+
+record(calc, "$(AREASTRUCTURE):$(DEVICENAME):DeltaImp") {
+	field(DESC, "$(DEVICE) Delta Impedance")
+	field(PINI, "YES")
+	field(VAL, 0)
+	field(INPA, "$(AREASTRUCTURE):$(DEVICENAME):Imp NPP")
+	field(INPB, "$(AREASTRUCTURE):$(DEVICENAME):Imp PP")
+	field(CALC, "B-A")
 	field(SCAN, "1 second")
 	field(EGU, "Ohm")
 }
