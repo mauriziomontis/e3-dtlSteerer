@@ -11,3 +11,11 @@ record(bo, "DTL:PwrC-PSC:AutoCmd") {
 	field(ZNAM, "MANUAL")
 	field(ONAM, "AUTO")
 }
+
+record(bo, "DTL:PwrC-PSC:ExecuteCmd") {
+	field(DESC, "Steerer System automatic control ")
+	field(PINI, "YES")
+	field(VAL, 0)
+	field(ZNAM, "MANUAL")
+	field(ONAM, "AUTO")
+}
