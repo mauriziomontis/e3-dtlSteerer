@@ -22,7 +22,7 @@ record(calc, "$(AREASTRUCTURE):$(DEVICENAME):DeltaImp") {
 	field(VAL, 0)
 	field(INPA, "$(AREASTRUCTURE):$(DEVICENAME):Imp NPP")
 	field(INPB, "$(AREASTRUCTURE):$(DEVICENAME):Imp PP")
-	field(CALC, "B-A")
+	field(CALC, "abs(B-A)")
 	field(SCAN, "1 second")
 	field(EGU, "Ohm")
 }
