@@ -5,7 +5,7 @@
 
 
 record(bo, "DTL:PwrC-PSC:AutoCmd") {
-	field(DESC, "Steerer System automatic control")
+	field(DESC, "auto control cmd")
 	field(PINI, "YES")
 	field(VAL, 0)
 	field(ZNAM, "MANUAL")
@@ -14,7 +14,7 @@ record(bo, "DTL:PwrC-PSC:AutoCmd") {
 
 # Software Readback - Value is updated by Steerer State Machine placed in dtlThermosensors IOC 
 record(bo, "DTL:PwrC-PSC:AutoCmd-RB") {
-	field(DESC, "Steerer System automatic control readback")
+	field(DESC, "auto control rdbk")
 	field(PINI, "YES")
 	field(VAL, 0)
 	field(ZNAM, "MANUAL")
@@ -22,7 +22,7 @@ record(bo, "DTL:PwrC-PSC:AutoCmd-RB") {
 }
 
 record(bo, "DTL:PwrC-PSC:OpRun") {
-	field(DESC, "Steerer Sys start operations")
+	field(DESC, "Start operations")
 	field(PINI, "YES")
 	field(VAL, 0)
 	field(ZNAM, "NOT START")
@@ -30,7 +30,7 @@ record(bo, "DTL:PwrC-PSC:OpRun") {
 }
 
 record(bo, "DTL:PwrC-PSC:OpStop") {
-	field(DESC, "Steerer Sys stop operations")
+	field(DESC, "Stop operations")
 	field(PINI, "YES")
 	field(VAL, 0)
 	field(ZNAM, "NOT STOP")
