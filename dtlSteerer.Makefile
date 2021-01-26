@@ -91,6 +91,7 @@ endif
 # SOURCES += $(APPSRC)/aCalcPostfix.c
 # SOURCES += $(APPSRC)/aCalcPerform.c
 
+#SOURCES += $(APPSRC)/steerer_statemachine.st
 # SOURCES += $(APPSRC)/calcUtil.c
 # SOURCES += $(APPSRC)/myFreeListLib.c
 # SOURCES += $(APPSRC)/devsCalcoutSoft.c
