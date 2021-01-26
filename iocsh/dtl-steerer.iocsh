@@ -76,11 +76,11 @@ require recsync, ${RECSYNC_VERSION}
 ##############################################################################
 ############ Configure Communication Driver
 
-drvAsynIPPortConfigure(${CRATE1}-asyn-port,${IPADDR1}:${PORT},0,0,0)
-drvAsynIPPortConfigure(${CRATE2}-asyn-port,${IPADDR2}:${PORT},0,0,0)
-drvAsynIPPortConfigure(${CRATE3}-asyn-port,${IPADDR3}:${PORT},0,0,0)
-drvAsynIPPortConfigure(${CRATE4}-asyn-port,${IPADDR4}:${PORT},0,0,0)
-drvAsynIPPortConfigure(${CRATE5}-asyn-port,${IPADDR5}:${PORT},0,0,0)
+drvAsynIPPortConfigure(${CRATE1}-asyn-port,"${IPADDR1}:${PORT} HTTP",0,0,0)
+drvAsynIPPortConfigure(${CRATE2}-asyn-port,"${IPADDR2}:${PORT} HTTP",0,0,0)
+drvAsynIPPortConfigure(${CRATE3}-asyn-port,"${IPADDR3}:${PORT} HTTP",0,0,0)
+drvAsynIPPortConfigure(${CRATE4}-asyn-port,"${IPADDR4}:${PORT} HTTP",0,0,0)
+drvAsynIPPortConfigure(${CRATE5}-asyn-port,"${IPADDR5}:${PORT} HTTP",0,0,0)
 
 
 ##############################################################################
